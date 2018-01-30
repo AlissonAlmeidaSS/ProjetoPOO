@@ -6,14 +6,14 @@ import java.util.Objects;
 public class Caixa {
     private int codigo;
     private Venda listaVenda[];
-    private itemDeVenda lista[];
+    private ItemDeVenda lista[];
     private static int contador;
     private float abertura;
     private float fechamento;
     private float valorTotal;
     private LocalDate horaAbertura;
 
-    public Caixa(int codigo, Venda[] listaVenda, itemDeVenda[] lista, float abertura, float fechamento, float valorTotal, LocalDate horaAbertura) {
+    public Caixa(int codigo, Venda[] listaVenda, ItemDeVenda[] lista, float abertura, float fechamento, float valorTotal, LocalDate horaAbertura) {
         this.codigo = codigo;
         this.listaVenda = listaVenda;
         this.lista = lista;
@@ -31,11 +31,11 @@ public class Caixa {
         this.listaVenda = listaVenda;
     }
 
-    public itemDeVenda[] getLista() {
+    public ItemDeVenda[] getLista() {
         return lista;
     }
 
-    public void setLista(itemDeVenda[] lista) {
+    public void setLista(ItemDeVenda[] lista) {
         this.lista = lista;
     }
 
