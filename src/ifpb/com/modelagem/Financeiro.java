@@ -11,13 +11,13 @@ public class Financeiro {
     private float contasPagar;
     private float saldo;
 
-    public Financeiro(int cod, Caixa[] listaCaixa, Venda[] listaVenda, float contaReceber, float contasPagar, float saldo) {
+    public Financeiro(int cod, Caixa[] listaCaixa, Venda[] listaVenda, float contaReceber, float contasPagar) {
         this.cod = cod;
         this.listaCaixa = listaCaixa;
         this.listaVenda = listaVenda;
         this.contaReceber = contaReceber;
         this.contasPagar = contasPagar;
-        this.saldo = saldo;
+        
     }
 
     public Caixa[] getListaCaixa() {
