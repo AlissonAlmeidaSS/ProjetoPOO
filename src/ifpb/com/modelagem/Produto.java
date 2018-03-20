@@ -12,14 +12,17 @@ public class Produto {
     private int ICMS;
     private int NCM;
 
-    public Produto(int codigo, String descrição, String tipo, float preço, int CFOP, int ICMS, int NCM) {
-        codigo =++contador;
+    public Produto( String descrição, String tipo, float preço, int CFOP, int ICMS, int NCM) {
+        this.codigo =++contador;
         this.descrição = descrição;
         this.tipo = tipo;
         this.preço = preço;
         this.CFOP = CFOP;
         this.ICMS = ICMS;
         this.NCM = NCM;
+    }
+
+    public Produto() {
     }
 
     public int getCodigo() {

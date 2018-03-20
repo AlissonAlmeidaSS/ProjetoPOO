@@ -7,8 +7,17 @@ public class Fornecedor extends Pessoa{
     private static int contador;
     private int CNPJ;
 
-    public Fornecedor(int CNPJ, String nome, String cpf, String endereco, LocalDate nascimento) {
-        super(nome, cpf, endereco, nascimento);
+    /**
+     *
+     * @param CNPJ
+     * @param nome
+     * @param cpf
+     * @param endereco
+     * @param nascimento
+     * @param email
+     */
+    public Fornecedor(int CNPJ, String nome, String cpf, String endereco, String nascimento, String email) {
+        super(nome, cpf, endereco, nascimento, email);
         codigo = ++contador;
         this.CNPJ = CNPJ;
     }

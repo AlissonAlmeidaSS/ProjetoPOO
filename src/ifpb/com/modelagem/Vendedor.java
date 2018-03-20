@@ -8,8 +8,8 @@ public class Vendedor extends Pessoa{
     private int ctps;
     private float salario;
     
-    public Vendedor(int ctps, float salario, String nome, String cpf, String endereco, LocalDate nascimento) {
-        super(nome, cpf, endereco, nascimento);
+    public Vendedor(int ctps, float salario, String nome, String cpf, String endereco, String nascimento, String email) {
+        super(nome, cpf, endereco, nascimento, email);
         id = ++contador;
         this.ctps = ctps;
         this.salario = salario;

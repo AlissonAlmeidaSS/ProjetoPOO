@@ -1,19 +1,23 @@
 package ifpb.com.modelagem;
 
-import java.time.LocalDate;
 import java.util.Objects;
 
-public class Pessoa {
+public class Pessoa implements Comparable<Pessoa>{
        private String nome;
        private String cpf;
        private String endereco;
-       private LocalDate nascimento;
+       private String nascimento;
+       private String email;
+       
+        public Pessoa(){
+    }
 
-    public Pessoa(String nome, String cpf, String endereco, LocalDate nascimento) {
+    public Pessoa(String nome, String cpf, String endereco, String nascimento, String email) {
         this.nome = nome;
         this.cpf = cpf;
         this.endereco = endereco;
         this.nascimento = nascimento;
+        this.email = email;
     }
 
     public String getNome() {
@@ -40,21 +44,30 @@ public class Pessoa {
         this.endereco = endereco;
     }
 
-    public LocalDate getNascimento() {
+    public String getNascimento() {
         return nascimento;
     }
 
-    public void setNascimento(LocalDate nascimento) {
+    public void setNascimento(String nascimento) {
         this.nascimento = nascimento;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 53 * hash + Objects.hashCode(this.nome);
-        hash = 53 * hash + Objects.hashCode(this.cpf);
-        hash = 53 * hash + Objects.hashCode(this.endereco);
-        hash = 53 * hash + Objects.hashCode(this.nascimento);
+        int hash = 3;
+        hash = 79 * hash + Objects.hashCode(this.nome);
+        hash = 79 * hash + Objects.hashCode(this.cpf);
+        hash = 79 * hash + Objects.hashCode(this.endereco);
+        hash = 79 * hash + Objects.hashCode(this.nascimento);
+        hash = 79 * hash + Objects.hashCode(this.email);
         return hash;
     }
 
@@ -82,12 +95,33 @@ public class Pessoa {
         if (!Objects.equals(this.nascimento, other.nascimento)) {
             return false;
         }
+        if (!Objects.equals(this.email, other.email)) {
+            return false;
+        }
         return true;
     }
 
     @Override
     public String toString() {
-        return "Pessoa{" + "nome=" + nome + ", cpf=" + cpf + ", endereco=" + endereco + ", nascimento=" + nascimento + '}';
+        return "Pessoa{" + "nome=" + nome + ", cpf=" + cpf + ", endereco=" + endereco + ", nascimento=" + nascimento + ", email=" + email + '}';
     }
+   
+    @Override
+    public int compareTo(Pessoa o) {
+        if (this.equals(o)) {
+			//São iguais
+			return 0;
+		} else if (getNome().equals(o.getNome())
+                          || getCpf().equals(o.getCpf()) 
+                          || getEndereco().equals(o.getEndereco())
+			  || getNascimento().equals(o.getNascimento())
+			  || getEmail().equals(o.getEmail())){
+			//Se alguma coisa igual
+			return 1;
+		}
+		//Se forem diferentes
+		return -1;
+    }
+
     
 }
